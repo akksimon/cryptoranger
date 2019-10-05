@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<definitions>
+  <define var="nombre_news_index" value="4" />
+  <define var="nombre_caracteres_index" value="200" />
+  <define var="number_comments_by_page" value="5"/>
+  <define var="nombre_news_by_page" value="6" />
+  <define var="nombre_caracteres_news" value="220" />
+</definitions>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<routes>
+  <route url="/" module="News" action="index" />
+  <route url="/(?:news|guides)/?(trading|fundamentals|getstarted)?/?(?:page)?=?([0-9]+)?" module="News" action="showAllNews" vars="category,page"/>
+  <route url="/(?:news|guide)/(trading|fundamentals|getstarted)?/?[a-z0-9A-Z %?-]*_?(\d+)/?(?:page)?=?([0-9]+)?" module="News" action="showNews" vars="category,id,page"/>
+  <route url="/commenter-news-([0-9]+)\.html" module="News" action="insertComment" vars="news" />
+  <route url="/feedback" module="Feedback" action="index" />
+</routes>
+
+
+
+<!--   <route url="/(?:news|guide)/[a-z0-9A-Z_ %]*-?(\d+)/?(?:page)?=?([0-9]+)?\.html" module="News" action="showNews" vars="id,pageComment"/>
+ -->

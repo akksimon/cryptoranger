@@ -1,0 +1,887 @@
+
+
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url('https://fonts.googleapis.com/css?family=Raleway:600&display=swap');
+:root
+{
+	--orangeColor: rgb(255, 166, 0);
+}
+
+/* Polices */
+
+body
+{
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins', sans-serif;
+}
+
+p, ul
+{
+  font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3
+{
+  font-family: 'Raleway', sans-serif;
+}
+
+
+/*--------------------------------------------------- LAYOUT --------------------------------------------------- */
+
+.fab
+{
+	padding: 15px;
+	font-size: 1.5rem;
+}
+
+.fas
+{
+	color: var(--orangeColor);
+}
+
+*
+{
+	outline: none !important;
+	scroll-behavior: smooth;
+}
+
+header
+{
+	position: relative;
+	z-index: 10000;
+}
+
+p, legend
+{
+	font-size: 1rem;
+	padding: 5px;
+}
+
+legend strong
+{
+	font-size: 1.15rem;
+}
+
+strong, em
+{
+	font-weight: normal;
+  	font-style: normal;
+}
+
+.backcolor
+{
+	background-color: var(--orangeColor);
+	color: #fff;
+	display: inline-block;
+	margin-top: 8px;
+}
+
+/* Layout Menu */
+
+.navbar
+{
+	background: transparent !important;
+	transition: 0.5s;
+}
+
+.navbar.scrolled
+{
+	background: #222 !important;
+	transition: 0.5s;
+}
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: #000;
+    background: #fff;
+}
+
+.navbar-light .navbar-nav .active>.nav-link:hover
+{
+	color: var(--orangeColor);
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(255,255,255,.8);
+    font-size: 1.1rem;
+}
+
+.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .nav-link:focus
+{
+	color: rgba(255,255,255, 1);
+}
+
+.navbar-light .navbar-brand, .navbar-light .navbar-brand:hover, .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:visited {
+	color: rgba(255, 255, 255, 1);
+	font-size: 2.5rem;
+	font-weight: 600;
+}
+
+.navbar-light .show
+{
+	background: #222 !important;
+}
+
+/* Try change hamburger */
+
+.mytoggle
+{
+	position: relative;
+	padding: 0;
+	width: 47px;
+	height: 47px;
+	cursor: pointer;
+	transition: 1s
+	background: #000;
+	overflow: hidden;
+}
+
+.mytoggle span
+{
+	width: 60%;
+	height: 4px;
+	position: absolute;
+	transition: 1s;
+	background: #262626;
+	transform: translateX(-50%);
+}
+
+.mytoggle span:nth-child(1)
+{
+	top: 30%;
+	left: 50%;
+}
+
+.mytoggle span:nth-child(2)
+{
+	bottom: 30%;
+	left: 50%;
+}
+
+.mytoggle.active span:nth-child(1)
+{
+	top: 45%;
+	left: 50%;
+	width: 60%;
+}
+
+.mytoggle.active span:nth-child(2)
+{
+	bottom: 45%;
+	left: 50%;
+	width: 60%;
+
+}
+
+.mytoggle.active span:nth-child(1)
+{
+	transform: translate(-50%, -50%) rotate(135deg);
+}
+
+.mytoggle.active span:nth-child(2)
+{
+	transform: translate(-50%, -50%) rotate(225deg);
+}
+
+.mytoggle.active span
+{
+	background: var(--orangeColor);
+}
+
+.mytoggle:before
+{
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 50%;
+	height: 4px;
+	background: #262626;
+	transition: 0.5s;
+	z-index: 0;
+}
+
+.mytoggle.active:before
+{
+	display: none;
+	width: 80%;
+	height: 100%;
+}
+
+/* Layout Footer (SUBMIT FEEDBACK) */
+
+
+/* Footer */
+
+footer
+{
+	background-color: var(--orangeColor);
+	color: white;
+}
+
+/* BEFORE BOOTSTRAP / GRID FORM */
+
+.containerSubmit
+{
+	display: grid;
+	width: 70%;
+	margin: auto;
+	grid-gap: 10px;
+	grid-template-areas: "title title"
+						 "mail name"
+					     "message message"
+						 "send send";
+}
+
+@media(max-width: 580px)
+{
+	.containerSubmit
+	{
+		grid-template-areas: "title"
+							 "mail"
+							 "name"
+							 "message"
+							 "send";
+		border: none;
+	}
+}
+
+/* END GRID FORM */
+
+.form-control:focus
+{
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 0, 0, 0.8);
+}
+
+.form-control
+{
+  font-size: 1.05em !important;
+}
+
+input, textarea
+{
+	display: block;
+	margin: 0;
+	padding: 0;
+	resize: none;
+	padding: 5px;
+}
+
+#contform
+{
+	max-width: 1000px;
+	margin: auto;
+	margin-bottom: 60px;
+	padding: 50px;
+}
+
+.itemform:nth-child(1) /* SUBMIT FEEDBACK */
+{
+	grid-area: title;
+	font-size: 2.2em;
+}
+
+.itemform:nth-child(2) /* Email */
+{
+	grid-area: mail;
+   height: 60px;
+}
+
+.itemform:nth-child(3) /* Name */
+{
+	grid-area: name;
+}
+
+.itemform:nth-child(4) /* Message */
+{
+	grid-area: message;
+	height: 150px;
+}
+
+.btnSend  /* Submit Button*/
+{
+	border: 0;
+	padding: 10px;
+	background-color: black;
+	outline: 0;
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	font-size: 1.05em;
+	cursor: pointer;
+	transition-property: color;
+	transition-duration: 0.8s;
+}
+
+.btnSend:hover
+{
+	color: var(--orangeColor);
+}
+
+
+/* JOIN ME */
+
+
+
+#contJoinme
+{
+	width: 60%;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	position: relative;
+}
+
+.majorpic
+{
+	border: solid black 2px;
+	border-radius: 10em;
+	object-fit: cover;
+}
+
+.itemjoinme
+{
+	padding: 10px;
+}
+
+.itemjoinme p
+{
+	margin: 0;
+	padding: 0;
+}
+
+.tweets
+{
+	width: 50%;
+	height: auto;
+}
+
+.copy
+{
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	color: white;
+	font-size: 0.8em;
+	font-style: italic;
+	text-align: right;
+	margin-top: 10px;
+}
+
+
+/*--------------------------------------------------- /LAYOUT --------------------------------------------------- */
+
+/*--------------------------------------------------- FrontEnd Index --------------------------------------------------- */
+
+/* Banner CRYPTO RANGER */
+
+.banner
+{
+	font-family: 'Alegreya Sans SC', sans-serif;
+	position: relative;
+	top: 0;
+	width: 100%;
+	height: 100vh;
+	background: url('../images/mountain.jpg');
+	background-size: cover;
+	margin-bottom: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.banner:before
+{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 200px;
+	background: linear-gradient(#000, transparent);
+	pointer-events: none;
+}
+
+.banner:after
+{
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 200px;
+	background: linear-gradient(360deg, #000, transparent);
+	pointer-events: none;
+}
+
+.fontTitle
+{
+	color: #fff;
+	padding: 0;
+	margin: 0;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	font-size: 3.5em;
+}
+
+.fontTitle span
+{
+	color: var(--orangeColor); /* Orange */
+	text-shadow: black 1px 1px 1px;
+}
+
+@media(max-width: 1024px) /* Gestion de l'image sur petit écran... */
+{
+	.banner
+	{
+		background: url('../images/1024mountain.jpg') no-repeat;
+		background-size: cover;
+		min-height: 100vh;
+	}
+}
+
+@media(max-width: 768px)
+{
+	.banner
+	{
+		background: url('../images/768mountain.jpg') no-repeat;
+		background-size: cover;
+		min-height: 100vh;
+	}
+}
+
+@media(max-width: 580px)
+{
+	.banner
+	{
+		background: url('../images/580mountain.jpg') no-repeat;
+		background-size: cover;
+		min-height: 100vh;
+	}
+}
+
+.jumbotron-fluid
+{
+	margin: 0;
+	width: 100%;
+	padding: 20px;
+	background: var(--orangeColor);
+	font-size: 1.1em;
+	background-origin: content-box;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.jumbotron-fluid p strong
+{
+	font-weight: normal;
+}
+
+.minijumbo
+{
+	width: 100%;
+	height: 6vh;
+	padding: 20px;
+	background: var(--orangeColor);
+	background-origin: content-box;
+}
+
+@media (max-width: 580px)
+{
+	.minijumbo
+	{
+		height: 11vh;
+	}
+}
+
+/* RECENT ARTICLES */
+
+.category
+{
+	max-width: 550px;
+	margin: 0;
+	padding: 15px;
+}
+
+.blog
+{
+	position: relative;
+	padding: 10px 0;
+	background: #fff;
+	margin-bottom: 35px;
+}
+
+.blogpost
+{
+	position: relative;
+	width: 100%;
+	margin-top: 50px;
+	background: #fff;
+}
+
+.blogpost .imgBx
+{
+	height: 400px;
+
+}
+
+.blogpost .imgBx img
+{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.blogpost .content
+{
+	padding: 15px;
+
+}
+
+.blogpost .content h2
+{
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	font-size: 1.5rem;
+}
+
+.threepoint
+{
+	display: block
+	font-weight: bold;
+	color: var(--orangeColor);
+	letter-spacing: 0.2rem;
+	font-size: 2rem;
+}
+
+.btnD1
+{
+	background: #262626;
+	color: #fff;
+	border-radius: 30px;
+	padding: 10px 20px;
+}
+
+.btnD1:hover
+{
+	background: var(--orangeColor);
+	font-weight: bold;
+	color: #fff;
+}
+
+@media (min-width: 1024px)
+{
+	.navbar
+	{
+		max-height: 50px;
+	}
+}
+
+.gutter
+{
+	margin-left: 0;
+	margin-right: 0;
+}
+
+/* GUIDES */
+
+#guides
+{
+	margin-bottom: 70px;
+}
+
+.guideBx
+{
+	margin: 12px;
+	position: relative;
+	height: 400px;
+	background: #000;
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.guideBx .imgBx
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.guideBx .imgBx img
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: 0.5s;
+}
+
+.guideBx:hover .imgBx img
+{
+	opacity: 0;
+}
+
+.guideBx .content
+{
+	position: absolute;
+	bottom: 5px;
+	left: 10%;
+	width: 80%;
+	height: 23px;
+	background: #fff;
+	transition: 0.5s;
+	overflow: hidden;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+.guideBx:hover .content
+{
+	width: 100%;
+	height: 100%;
+	bottom: 0;
+	left: 0;
+	padding: 15px;
+
+}
+
+.guideBx .content h3
+{
+	text-align: center;
+	background-color: #111;
+	color: #fff;
+	margin: 0;
+	margin-bottom: 15px;
+	padding: 0;
+	font-size: 20px;
+	font-weight: bold;
+	letter-spacing: 0.1rem;
+}
+
+/* GUIDE-GETSTARTED / GUIDE-FUNDAMENTALS / GUIDE-TRADING / NEWS */
+
+figure .imgback
+{
+	display: block;
+	max-height: 40vh;
+	margin: auto;
+	object-fit: cover;
+}
+
+blockquote
+{
+  border-left: dashed 5px var(--orangeColor);
+  padding: 20px;
+  margin: 0;
+  font-style: italic;
+  background-color: rgba(255, 166, 0, 0.2);
+}
+
+figcaption
+{
+  text-align: center;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+@media (min-width: 1024px)
+{
+  .newstitle
+  {
+ 	 min-height: 100px;
+  }
+  
+  .newstitleindex
+  {
+   	min-height: 70px; 
+  }
+}
+
+/* twitter */
+
+.twitter
+{
+	text-align: center;
+}
+
+
+/*--------------------------------------------------- /FrontEnd Index --------------------------------------------------- */
+
+/* -------------------------------------------- All News / Guides-------------------------------------------------- */
+
+.pagination >li.active >a
+{
+	background: var(--orangeColor) !important;
+	border: solid 1px var(--orangeColor) !important;
+}
+
+.pagination >li >a
+{
+	color: #333;
+}
+
+.pagination >li.active >a:hover
+{
+	color: rgba(var(--orangeColor), var(--orangeColor), var(--orangeColor), 1) !important;
+	z-index: 3 !important;
+	color: #fff !important;
+}
+
+.pagination >li >a:focus
+{
+	border: none !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 992px)
+{
+	.navbar-expand-lg .navbar-nav .nav-link
+	{
+		padding-right: 1rem;
+		padding-left: 1rem;
+	}
+}
+
+@media (max-width: 992px)
+{
+	.navbar-light .navbar-toggler
+	{
+		background: #fff;
+		border-radius: 0;
+	}
+
+	.banner
+	{
+		min-height: 100vh;
+		padding: 100px 0;
+	}
+
+	.contentBox h1, .sec2 h2
+	{
+		font-size: 2rem;
+	}
+
+	.navbar-expand-lg .navbar-nav .nav-link
+	{
+		padding-right: 1rem;
+		padding-left: 1rem;
+	}
+
+	.sec1
+	{
+		padding: 20px 0;
+	}
+
+	.headerText h2
+	{
+		font-size: 2rem;
+	}
+
+	.blog
+	{
+		padding: 20px 0;
+	}
+
+	.blogpost .imgBx
+	{
+		height: 200px;
+	}
+	
+	.contact
+	{
+		padding: 20px 0;
+	}
+
+	.contact .form-control
+	{
+		height: 40px;
+		border: solid 1px #fff;
+	}
+
+	footer
+	{
+		padding: 0px 0 20px;
+	}
+
+	.sci li
+	{
+		margin: 0 10px;
+	}
+
+	.sci li a
+	{
+		transition: 0.5s;
+		font-size: 1.5rem;
+		color: #777;
+	}
+
+	.sec2
+	{
+		height: auto;
+		padding: 40px 0;
+	}
+
+	.contact:after
+	{
+		height: 50px;
+	}
+}
+
+
+/* ERROR 404 */
+
+
+.notfound
+{
+	display: flex;
+  	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	background: url(/images/404.jpg) no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+  	color: #fff;
+}
+
+.error404
+{
+  font-family: font-family: 'Baloo Bhai', cursive, sans-serif;
+  font-size: 10rem;
+}
+
+.btn404
+{
+	background: #fff;
+	color: #262626;
+	border-radius: 30px;
+	padding: 10px 20px;
+}

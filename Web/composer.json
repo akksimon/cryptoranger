@@ -1,0 +1,16 @@
+{
+    "name": "ranger/cryptoranger",
+    "description": "Crypto blog",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "OCFram\\": "../lib/OCFram/",
+            "App\\": "../App/",
+            "Model\\": "../lib/vendors/Model/",
+            "Entity\\": "../lib/vendors/Entity/",
+            "FormBuilder\\": "../lib/vendors/FormBuilder/",
+            "Slug\\": "../lib/vendors/Slug/"
+        }
+    },
+    "require": {}
+}
